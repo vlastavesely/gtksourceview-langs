@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ Copyright (C) 2017 Vlasta Vesely <vlastavesely@protonmail.ch>
+
+ This file is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ This file is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<language id="conf" _name="UNIX Configuration" version="2.0" _section="Others">
+  <metadata>
+    <property name="mimetypes">text/x-conf;</property>
+    <property name="globs">*.conf</property>
+  </metadata>
+
+  <styles>
+    <style id="keyname"        _name="Key"                   map-to="def:type"/>
+  </styles>
+
+  <definitions>
+
+    <context id="trailing-spaces" style-ref="def:error">
+      <match>\s+$</match>
+    </context>
+
+    <context id="key-val1" style-ref="keyname">
+      <match>^[a-zA-Z0-9_-]+\s*\=</match>
+    </context>
+
+    <context id="key-val2" style-ref="keyname">
+      <match>^[a-zA-Z0-9_-]+\:\s+</match>
+    </context>
+
+    <context id="conf" class="no-spell-check">
+      <include>
+        <context ref="def:shell-like-comment"/>
+        <context ref="key-val1"/>
+        <context ref="key-val2"/>
+        <context ref="trailing-spaces"/>
+      </include>
+    </context>
+
+  </definitions>
+</language>

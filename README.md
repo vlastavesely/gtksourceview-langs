@@ -7,6 +7,10 @@ This is a set of several newly created or customized highlighters for
 
 New Highlighters
 ----------------
+### conf.lang
+* highligther for `*.conf` files. **Important note**: there is no general `conf` syntax so it can happen that the highlighter could not work as expected for all of your `*.conf` files.
+* highlights comments, key names and trailing spaces.
+
 ### neon.lang
 * entirely new implementation [NEON](https://ne-on.org/) highlighter.
 
