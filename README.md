@@ -17,6 +17,14 @@ New Highlighters
 
 Customized Existing Highlighters
 --------------------------------
+### c.lang
+* *copied from GtkSourceView 3.24.3*.
+* added highlighting of trailing whitespaces.
+
 ### def.lang
 * *copied from GtkSourceView 3.24.3*.
 * added highlighting of keywords `HACK`, `WARNING`, `CRTITICAL`, `FATAL`, `ERROR` and `DIRTY` in comments.
+
+### sh.lang
+* *copied from GtkSourceView 3.24.3*.
+* added highlighting of trailing whitespaces.
