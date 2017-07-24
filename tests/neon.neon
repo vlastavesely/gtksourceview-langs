@@ -1,0 +1,26 @@
+# A comment; words TODO XXX should be highlighted.
+# Trailing spaces should be highligted:
+	
+
+# Block syntax:
+property:
+	first: "quoted string\nvalue"
+	second: string value
+	third: 11.11
+	fourth: 11
+	fifth: yesx # should not be highligthed
+	sixth: yes # should be highligthed
+	yes: no
+	11: 11
+
+test: 'i am \' text'
+test: "i am \" text"
+'i am \' prop': test
+"i am \" prop": test
+
+# Inline syntax:
+[
+	{test: true, "null": null},
+	{some: "value", other: Long value, number: 11.11}
+]
+

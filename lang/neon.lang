@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ Copyright (C) 2017 Vlasta Vesely <vlastavesely@protonmail.ch>
+
+ This file is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ This file is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<language id="neon" _name="NEON Config" version="2.0" _section="Others">
+  <metadata>
+    <property name="mimetypes">text/x-neon;</property>
+    <property name="globs">*.neon</property>
+  </metadata>
+
+  <styles>
+    <style id="keyname"        _name="Key"                   map-to="def:type"/>
+    <style id="null-value"     _name="Null Value"            map-to="def:special-constant"/>
+    <style id="boolean"        _name="Boolean value"         map-to="def:boolean"/>
+    <style id="block"          _name="Block"                 map-to="def:identifier"/>
+  </styles>
+
+  <definitions>
+
+    <context id="keyname" style-ref="keyname" class-disabled="no-spell-check">
+      <match>(\'(?:\\.|[^\'\\])*+\'|"(?:\\.|[^"\\])*+"|[^\[\{\,\s\:\"\']+):</match>
+    </context>
+
+    <context id="null-value" style-ref="null-value">
+      <prefix>(?i)\b</prefix> <!-- case insensitive -->
+      <keyword>null</keyword>
+    </context>
+
+    <context id="boolean" style-ref="boolean">
+      <prefix>(?i)\b</prefix> <!-- case insensitive -->
+      <keyword>false</keyword>
+      <keyword>true</keyword>
+      <keyword>off</keyword>
+      <keyword>on</keyword>
+      <keyword>no</keyword>
+      <keyword>yes</keyword>
+    </context>
+
+    <context id="block" style-ref="block">
+      <match>[\{\}\[\],]</match>
+    </context>
+
+    <context id="trailing-spaces" style-ref="def:error">
+      <match>\s+$</match>
+    </context>
+
+    <context id="neon" class="no-spell-check">
+      <include>
+        <context ref="def:shell-like-comment"/>
+        <context ref="keyname"/>
+        <context ref="def:string"/>
+        <context ref="def:single-quoted-string"/>
+        <context ref="null-value"/>
+        <context ref="boolean"/>
+        <context ref="def:float"/>
+        <context ref="def:decimal"/>
+        <context ref="block"/>
+        <context ref="trailing-spaces"/>
+      </include>
+    </context>
+
+  </definitions>
+</language>
