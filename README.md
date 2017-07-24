@@ -25,6 +25,10 @@ Customized Existing Highlighters
 * *copied from GtkSourceView 3.24.3*.
 * added highlighting of keywords `HACK`, `WARNING`, `CRTITICAL`, `FATAL`, `ERROR` and `DIRTY` in comments.
 
+### javascript.lang
+* *copied from GtkSourceView 3.24.3*.
+* added highlighting of trailing whitespaces.
+
 ### sh.lang
 * *copied from GtkSourceView 3.24.3*.
 * added highlighting of trailing whitespaces.
