@@ -34,6 +34,14 @@ Customized Existing Highlighters
 * added highlighting of trailing whitespaces.
 * changed color of property to be different from color of value.
 
+### php.lang
+* *copied from GtkSourceView 3.24.3*.
+* added highlithing of trailing spaces.
+* fixed highlighting of common functions `print_r()`, `var_dump()`, etc.
+* added binary number highlighting.
+* added highlighting of type hints in functions.
+* added highlighting of annotations in docblock comments.
+
 ### sh.lang
 * *copied from GtkSourceView 3.24.3*.
 * added highlighting of trailing whitespaces.
