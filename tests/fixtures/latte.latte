@@ -1,0 +1,30 @@
+{* A comment; words TODO XXX should be highlighted. *}
+{* Trailing spaces should be highligted: *}
+	
+<!DOCTYPE html>
+<html attr="val">
+
+	{* Latte macros *}
+	{if $xxx === TRUE || $aaa == 11.11} {* <= PHP syntax should be highligted inside *}
+		<a n:href="Page:test x => 11">n:macro should be highlighted</a>
+		<tag attr="with {_$xxx}"> {* <= should highlight macro inside *}
+	{/if}
+
+	{_$test|test:22}
+
+	{* Highligted CSS context *}
+	<style>
+	a.test {
+		color: blue; {* Latte comment *}
+		background: {$bg}; /* Latte macro FIXME */
+	}
+	</style>
+
+	{* Highlighted JS context *}
+	<script>
+	function foo() {
+		x = parseInt(); {* Latte comment *}
+		y = {$macro}; // Latte macro
+	}
+	</script>
+</html>

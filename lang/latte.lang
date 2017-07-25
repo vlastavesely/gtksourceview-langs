@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ Copyright (C) 2017 Vlasta Vesely <vlastavesely@protonmail.ch>
+
+ This file is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ This file is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<language id="latte" _name="Latte Template" version="2.0" _section="Others">
+  <metadata>
+    <property name="mimetypes">text/x-latte;</property>
+    <property name="globs">*.latte</property>
+  </metadata>
+
+  <styles>
+    <style id="comment"        _name="Comment"               map-to="def:comment"/>
+    <style id="macro"          _name="Macro"                 map-to="def:statement"/>
+    <style id="macro-name"     _name="Macro name"            map-to="def:constant"/>
+  </styles>
+
+  <definitions>
+
+    <context id="macro-content">
+      <include>
+        <context ref="php:single-quoted-string"/>
+        <context ref="php:function"/>
+        <context ref="php:variable"/>
+        <context ref="php:array-operators"/>
+        <context ref="php:keywords"/>
+        <context ref="php:common-function"/>
+        <context ref="php:operators"/>
+        <context ref="php:type"/>
+        <context ref="php:null-value"/>
+        <context ref="php:boolean"/>
+        <context ref="php:float"/>
+        <context ref="php:decimal-number"/>
+        <context ref="php:octal-number"/>
+        <context ref="php:hexadecimal-number"/>
+        <context ref="php:identifier"/>
+      </include>
+    </context>
+
+    <context id="macro">
+      <start>(?i)(\{)(\/?)([_\?\!a-z0-9][a-z0-9-]*|(?=\S)(?!\{))</start>
+      <end>(\})</end>
+      <include>
+        <context sub-pattern="1" where="start" style-ref="macro"/>
+        <context sub-pattern="2" where="start" style-ref="macro"/>
+        <context sub-pattern="3" where="start" style-ref="macro-name"/>
+        <context sub-pattern="1" where="end" style-ref="macro"/>
+        <context ref="macro-content"/>
+      </include>
+    </context>
+
+    <context id="n-attr-macro" class="no-spell-check">
+      <start>(?i)(n\:)([a-z0-9-]+\=)(\")</start>
+      <end>\"</end>
+      <include>
+        <context sub-pattern="1" where="start" style-ref="xml:attribute-name"/>
+        <context sub-pattern="2" where="start" style-ref="xml:attribute-name"/>
+        <context sub-pattern="3" where="start" style-ref="xml:attribute-value"/>
+        <context sub-pattern="0" where="end" style-ref="xml:attribute-value"/>
+        <context ref="macro-content"/>
+      </include>
+    </context>
+
+    <context id="trailing-spaces" style-ref="def:error">
+      <match>\s+$</match>
+    </context>
+
+    <context id="html-attrib-quoted" class="no-spell-check">
+      <start>([a-z0-9:_-]+\s*=\s*)(\")</start>
+      <include>
+        <context sub-pattern="1" where="start" style-ref="html:attrib-name"/>
+        <context sub-pattern="2" where="start" style-ref="html:attrib-value"/>
+        <context id="string" end-parent="true" end-at-line-end="true" style-ref="html:attrib-value" class="string" class-disabled="no-spell-check">
+          <start>\%{def:always-match}</start>
+          <end>\"</end>
+          <include>
+            <context ref="xml:entity"/>
+            <context ref="xml:character-reference"/>
+            <context ref="html:embedded-lang-hook"/>
+          </include>
+        </context>
+      </include>
+    </context>
+
+    <context id="attrib-quoted" class="no-spell-check">
+      <include>
+        <context ref="n-attr-macro"/>
+        <context ref="html-attrib-quoted"/>
+      </include>
+    </context>
+
+    <context id="comment" style-ref="comment">
+      <start>\{\*</start>
+      <end>\*\}</end>
+      <include>
+        <context ref="def:in-comment"/>
+      </include>
+    </context>
+
+    <context id="latte" class="no-spell-check">
+      <include>
+        <context ref="comment"/>
+        <context ref="macro"/>
+        <context ref="html:html"/>
+        <context ref="php:php-block"/>
+        <context ref="html:script"/>
+        <context ref="trailing-spaces"/>
+      </include>
+    </context>
+
+    <replace id="html:embedded-lang-hook" ref="latte"/>
+    <replace id="html:attrib-quoted" ref="attrib-quoted"/>
+
+  </definitions>
+</language>

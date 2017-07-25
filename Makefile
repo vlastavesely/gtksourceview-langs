@@ -4,6 +4,7 @@ LANGUAGES =		\
 	def.lang	\
 	javascript.lang	\
 	json.lang	\
+	latte.lang	\
 	neon.lang	\
 	php.lang	\
 	sh.lang

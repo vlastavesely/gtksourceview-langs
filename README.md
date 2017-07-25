@@ -34,6 +34,11 @@ Customized Existing Highlighters
 * added highlighting of trailing whitespaces.
 * changed color of property to be different from color of value.
 
+### latte.lang
+* entirely new implementation [Latte](https://latte.nette.org/) highlighter.
+* supports macros highlighting and proper highlighting of JS and CSS contexts.
+* **important note**: does not highlight Latte syntax in embedded CSS and JS with default HTML highlighter from GtkSourceView 2.0.
+
 ### php.lang
 * *copied from GtkSourceView 3.24.3*.
 * added highlithing of trailing spaces.
