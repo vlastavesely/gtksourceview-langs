@@ -3,6 +3,7 @@ LANGUAGES =		\
 	conf.lang	\
 	def.lang	\
 	javascript.lang	\
+	json.lang	\
 	neon.lang	\
 	sh.lang
 

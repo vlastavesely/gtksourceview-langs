@@ -29,6 +29,11 @@ Customized Existing Highlighters
 * *copied from GtkSourceView 3.24.3*.
 * added highlighting of trailing whitespaces.
 
+### json.lang
+* *copied from GtkSourceView 3.24.3*.
+* added highlighting of trailing whitespaces.
+* changed color of property to be different from color of value.
+
 ### sh.lang
 * *copied from GtkSourceView 3.24.3*.
 * added highlighting of trailing whitespaces.

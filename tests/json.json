@@ -1,0 +1,7 @@
+{
+	"key": "after this, there is trailing whitespace",	
+	"array": ["cat", "dog"],
+	"number": 11,
+	"bool": true,
+	"null": null
+}
