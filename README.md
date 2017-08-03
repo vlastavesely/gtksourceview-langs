@@ -41,7 +41,7 @@ Customized Existing Highlighters
 
 ### php.lang
 * *copied from GtkSourceView 3.24.3*.
-* added highlithing of trailing spaces.
+* added highlighting of trailing spaces.
 * fixed highlighting of common functions `print_r()`, `var_dump()`, etc.
 * added binary number highlighting.
 * added highlighting of type hints in functions.
