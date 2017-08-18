@@ -50,3 +50,4 @@ Customized Existing Highlighters
 ### sh.lang
 * *copied from GtkSourceView 3.24.3*.
 * added highlighting of trailing whitespaces.
+* added highlighting of concatenation in variabe definition (`var+="value"`)
