@@ -39,6 +39,12 @@ Customized Existing Highlighters
 * supports macros highlighting and proper highlighting of JS and CSS contexts.
 * **important note**: does not highlight Latte syntax in embedded CSS and JS with default HTML highlighter from GtkSourceView 2.0.
 
+### makefile.lang
+* *copied from GtkSourceView 3.24.3*.
+* enabled for `Makefile.in`.
+* added highlighting of trailing spaces.
+* added highlighting of `@placeholders@` and assigned variables.
+
 ### php.lang
 * *copied from GtkSourceView 3.24.3*.
 * added highlighting of trailing spaces.

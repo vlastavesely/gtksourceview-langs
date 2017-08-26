@@ -5,6 +5,7 @@ LANGUAGES =		\
 	javascript.lang	\
 	json.lang	\
 	latte.lang	\
+	makefile.lang	\
 	neon.lang	\
 	php.lang	\
 	sh.lang
