@@ -8,6 +8,7 @@ LANGUAGES =		\
 	makefile.lang	\
 	neon.lang	\
 	php.lang	\
+	ruby.lang	\
 	sh.lang
 
 GSV2_DIR=/usr/share/gtksourceview-2.0/language-specs

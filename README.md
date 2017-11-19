@@ -53,6 +53,10 @@ Customized Existing Highlighters
 * added highlighting of type hints in functions.
 * added highlighting of annotations in docblock comments.
 
+### ruby.lang
+* *copied from GtkSourceView 3.99.4*.
+* added highlighting of trailing whitespaces.
+
 ### sh.lang
 * *copied from GtkSourceView 3.24.3*.
 * added highlighting of trailing whitespaces.
