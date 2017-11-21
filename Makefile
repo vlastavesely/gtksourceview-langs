@@ -1,6 +1,7 @@
 LANGUAGES =		\
 	c.lang		\
 	conf.lang	\
+	css.lang	\
 	def.lang	\
 	javascript.lang	\
 	json.lang	\
