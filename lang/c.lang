@@ -48,6 +48,7 @@
     <style id="decimal"           _name="Decimal number"        map-to="def:decimal"/>
     <style id="octal"             _name="Octal number"          map-to="def:base-n-integer"/>
     <style id="hexadecimal"       _name="Hexadecimal number"    map-to="def:base-n-integer"/>
+    <style id="binary"            _name="Binary number"         map-to="def:base-n-integer"/>
     <style id="boolean"           _name="Boolean value"         map-to="def:boolean"/>
     <style id="standard-stream"   _name="Standard stream"       map-to="def:constant"/>
     <style id="signal-name"       _name="Signal name"           map-to="def:constant"/>
@@ -155,6 +156,14 @@
       <match extended="true">
         (?&lt;![\w\.])
         0[xX][a-fA-F0-9]+[uUlL]*
+        (?![\w\.])
+      </match>
+    </context>
+
+    <context id="binary" style-ref="binary">
+      <match extended="true">
+        (?&lt;![\w\.])
+        0[bB][01]+
         (?![\w\.])
       </match>
     </context>
@@ -329,6 +338,7 @@
         <context ref="char"/>
         <context ref="float"/>
         <context ref="hexadecimal"/>
+        <context ref="binary"/>
         <context ref="invalid-hexadecimal"/>
         <context ref="octal"/>
         <context ref="invalid-octal"/>

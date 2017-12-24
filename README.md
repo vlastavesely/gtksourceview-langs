@@ -20,6 +20,7 @@ Customized Existing Highlighters
 ### c.lang
 * *copied from GtkSourceView 3.24.3*.
 * added highlighting of trailing whitespaces.
+* added highlighting of binary numbers (`0b11`).
 
 ### css.lang
 * *copied from GtkSourceView 3.99.4*.
