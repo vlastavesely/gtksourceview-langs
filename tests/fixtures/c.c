@@ -10,5 +10,8 @@
 int main(int argc, char **argv)
 {
    	something(); // before this, misused whitespaces should be highlighted
+
+        spaced_indentation();
+
 	return 0;
 }

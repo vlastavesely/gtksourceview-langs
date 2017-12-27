@@ -492,7 +492,7 @@
     </context>
 
     <context id="trailing-spaces" style-ref="def:error">
-      <match>\s+$</match>
+      <match>\s+$|^ +(?=\t)</match>
     </context>
 
     <context id="sh" class="no-spell-check">

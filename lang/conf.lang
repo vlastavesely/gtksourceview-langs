@@ -30,7 +30,7 @@
   <definitions>
 
     <context id="trailing-spaces" style-ref="def:error">
-      <match>\s+$</match>
+      <match>\s+$|^ +(?=\t)</match>
     </context>
 
     <context id="key-val1" style-ref="keyname">

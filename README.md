@@ -24,7 +24,7 @@ Customized Existing Highlighters
 
 ### css.lang
 * *copied from GtkSourceView 3.99.4*.
-* added highlighting of trailing whitespaces.
+* added highlighting of trailing whitespaces and spaces before a tab.
 
 ### def.lang
 * *copied from GtkSourceView 3.24.3*.
@@ -32,11 +32,11 @@ Customized Existing Highlighters
 
 ### javascript.lang
 * *copied from GtkSourceView 3.24.3*.
-* added highlighting of trailing whitespaces.
+* added highlighting of trailing whitespaces and spaces before a tab.
 
 ### json.lang
 * *copied from GtkSourceView 3.24.3*.
-* added highlighting of trailing whitespaces.
+* added highlighting of trailing whitespaces and spaces before a tab.
 * changed color of property to be different from color of value.
 
 ### latte.lang
@@ -47,12 +47,12 @@ Customized Existing Highlighters
 ### makefile.lang
 * *copied from GtkSourceView 3.24.3*.
 * enabled for `Makefile.in`.
-* added highlighting of trailing spaces.
+* added highlighting of trailing whitespaces and spaces before a tab.
 * added highlighting of `@placeholders@` and assigned variables.
 
 ### php.lang
 * *copied from GtkSourceView 3.24.3*.
-* added highlighting of trailing spaces.
+* added highlighting of trailing whitespaces and spaces before a tab.
 * fixed highlighting of common functions `print_r()`, `var_dump()`, etc.
 * added binary number highlighting.
 * added highlighting of type hints in functions.
@@ -60,9 +60,9 @@ Customized Existing Highlighters
 
 ### ruby.lang
 * *copied from GtkSourceView 3.99.4*.
-* added highlighting of trailing whitespaces.
+* added highlighting of trailing whitespaces and spaces before a tab.
 
 ### sh.lang
 * *copied from GtkSourceView 3.24.3*.
-* added highlighting of trailing whitespaces.
+* added highlighting of trailing whitespaces and spaces before a tab.
 * added highlighting of concatenation in variabe definition (`var+="value"`)

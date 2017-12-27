@@ -78,7 +78,7 @@
     </context>
 
     <context id="trailing-spaces" style-ref="def:error">
-      <match>\s+$</match>
+      <match>\s+$|^ +(?=\t)</match>
     </context>
 
     <context id="string" style-ref="string" end-at-line-end="true" class="string" class-disabled="no-spell-check">
