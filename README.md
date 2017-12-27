@@ -19,7 +19,7 @@ Customized Existing Highlighters
 --------------------------------
 ### c.lang
 * *copied from GtkSourceView 3.24.3*.
-* added highlighting of trailing whitespaces.
+* added highlighting of trailing whitespaces and spaces before a tab.
 * added highlighting of binary numbers (`0b11`).
 
 ### css.lang

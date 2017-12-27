@@ -9,5 +9,6 @@
 
 int main(int argc, char **argv)
 {
+   	something(); // before this, misused whitespaces should be highlighted
 	return 0;
 }
