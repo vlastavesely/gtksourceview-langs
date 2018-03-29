@@ -6,5 +6,6 @@
 
 some_function()
 {
-	echo "cat";
+	echo "cat"
+	some=a || some=b && some=c
 }
