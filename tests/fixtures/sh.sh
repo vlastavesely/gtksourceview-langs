@@ -7,5 +7,8 @@
 some_function()
 {
 	echo "cat"
-	some=a || some=b && some=c
+	if var=$(xx)
+	then
+		some=a || some=b && some=c
+	fi
 }
