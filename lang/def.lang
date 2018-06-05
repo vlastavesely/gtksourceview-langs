@@ -181,7 +181,7 @@
           <match>\%{email-address}</match>
         </context>
         <context id="comment-note" extend-parent="false" style-ref="note" class="no-spell-check comment-note">
-          <match>\b(FIXME|TODO|XXX|HACK|WARNING|CRTITICAL|FATAL|ERROR|DIRTY)\b</match>
+          <match>\b(FIXME|TODO|XXX|HACK|WARNING|CRTITICAL|FATAL|ERROR|DIRTY|DEBUG)\b</match>
         </context>
       </include>
     </context>
