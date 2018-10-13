@@ -34,11 +34,11 @@
     </context>
 
     <context id="key-val1" style-ref="keyname">
-      <match>^[a-zA-Z0-9_-]+\s*\=</match>
+      <match>^[a-zA-Z0-9\._-]+\s*\=</match>
     </context>
 
     <context id="key-val2" style-ref="keyname">
-      <match>^[a-zA-Z0-9_-]+\:\s+</match>
+      <match>^[a-zA-Z0-9\._-]+\:\s+</match>
     </context>
 
     <context id="conf" class="no-spell-check">
