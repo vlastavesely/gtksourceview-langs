@@ -25,6 +25,8 @@
 
   <styles>
     <style id="keyname"        _name="Key"                   map-to="def:type"/>
+    <style id="number"         _name="Number"                map-to="def:decimal"/>
+    <style id="ini-group"      _name="INI Group"             map-to="def:statement"/>
   </styles>
 
   <definitions>
@@ -33,12 +35,30 @@
       <match>\s+$|^ +(?=\t)</match>
     </context>
 
-    <context id="key-val1" style-ref="keyname">
-      <match>^[a-zA-Z0-9\._-]+\s*\=</match>
+    <context id="key-val1">
+      <match>^([a-zA-Z0-9\._-]+)\s*\=</match>
+      <include>
+        <context id="key-name" sub-pattern="1" style-ref="keyname"/>
+      </include>
     </context>
 
-    <context id="key-val2" style-ref="keyname">
-      <match>^[a-zA-Z0-9\._-]+\:\s+</match>
+    <context id="key-val2" >
+      <match>^([a-zA-Z0-9\._-]+)\:\s+</match>
+      <include>
+        <context id="key-name" sub-pattern="1" style-ref="keyname"/>
+      </include>
+    </context>
+
+    <context id="number" style-ref="number">
+      <match extended="true">
+        (?&lt;![\w\.])
+        [+-]?([1-9][0-9]*|0)
+        (?![\w\.])
+      </match>
+    </context>
+
+    <context id="ini-group" style-ref="ini-group">
+      <match>^\s*\[[a-z0-9-_]+\]</match>
     </context>
 
     <context id="conf" class="no-spell-check">
@@ -46,6 +66,8 @@
         <context ref="def:shell-like-comment"/>
         <context ref="key-val1"/>
         <context ref="key-val2"/>
+        <context ref="number"/>
+        <context ref="ini-group"/>
         <context ref="trailing-spaces"/>
       </include>
     </context>
