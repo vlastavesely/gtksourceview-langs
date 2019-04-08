@@ -8,6 +8,7 @@ LANGUAGES =		\
 	latte.lang	\
 	makefile.lang	\
 	neon.lang	\
+	nginx-conf.lang	\
 	php.lang	\
 	ruby.lang	\
 	sh.lang
