@@ -50,6 +50,10 @@ Customized Existing Highlighters
 * added highlighting of trailing whitespaces and spaces before a tab.
 * added highlighting of `@placeholders@` and assigned variables.
 
+### perl.lang
+* *copied from GtkSourceView 3.24.3*.
+* added highlighting of trailing whitespaces and spaces before a tab.
+
 ### php.lang
 * *copied from GtkSourceView 3.24.3*.
 * added highlighting of trailing whitespaces and spaces before a tab.

@@ -9,6 +9,7 @@ LANGUAGES =		\
 	makefile.lang	\
 	neon.lang	\
 	nginx-conf.lang	\
+	perl.lang	\
 	php.lang	\
 	ruby.lang	\
 	sh.lang
